@@ -1,0 +1,116 @@
+<div class="wrap">
+    <div class="header">
+    <div class="top_menu">
+        <ul>
+            <li><a href="#">대한민국 구석구석</a></li>
+            <li><a href="#">VISITKOREA</a></li>
+            <li><a href="#">한국관광산업포털</a></li>
+            <li><a href="#">한국관광데이터랩</a></li>
+            <li><a href="#">한국관광콘텐츠랩</a></li>
+            <li><a href="#"><img style="margin-top: 10px;" src="../images/visit_korea_logo.png" alt=""></a></li>
+        </ul>
+        <ul>
+            <li><a href="#">ENGLISH</a></li>
+            <li><a href="#"><i class="xi-stop"></i></a></li>
+            <li><a href="#">JAPANESE</a></li>
+            <li><a href="#"><i class="xi-stop"></i></a></li>
+            <li><a href="#">CHINESE</a></li>
+        </ul>
+    </div>
+    <div class="main_menu">
+        <div class="logo"><a href="./main.html"><img src="../images/logo.png" alt=""></a></div>
+        <ul class="gnb">
+            <li>
+                <a href="./main.html">한국관광공사</a>
+                <ul></ul>
+            </li>
+            <li>
+                <a href="../pages/news_KTO.html">알림마당</a>
+                <ul>
+                    <li><a href="../pages/news_KTO.html">KTO소식</a></li>
+                    <li><a href="../pages/news_announced.html">공고</a></li>
+                    <li><a href="../pages/news_reported.html">보도자료</a></li>
+                    <li><a href="../pages/news_tour.html">관광도우미</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="../pages/about.html">공사소개</a>
+                <ul>
+                    <li><a href="#">설립목적및비전</a></li>
+                    <li><a href="../pages/about.html">CI/BI소개</a></li>
+                    <li><a href="#">조직도</a></li>
+                    <li><a href="#">오시는길</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="../pages/Q&A.html">국민참여</a>
+                <ul>
+                    <li><a href="../pages/Q&A.html">자주 묻는 질문</a></li>
+                    <li><a href="#">똑똑한 문의</a></li>
+                    <li><a href="#">똑똑한 제안</a></li>
+                    <li><a href="#">칭찬합시다</a></li>
+                    <li><a href="#">제보합니다</a></li>
+                    <li><a href="#">적극행정</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="../pages/job_info.html">채용정보</a>
+                <ul>
+                    <li><a href="../pages/job_info.html">인재상</a></li>
+                    <li><a href="#">복리후생제도</a></li>
+                    <li><a href="#">채용공고</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="search">
+            <div class="icon"><i class="xi-magnifier"></i></div>
+        </div>
+    </div>
+    
+    </div>
+</div>
+
+<div class="search_popup">
+    <div class="input_text">
+        <input type="text" size="50" placeholder="검색어를 입력하세요">
+        <i class="xi-magnifier"></i>
+    </div>
+</div>
+
+<div class="dim">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line_space">
+    </div>
+    <div class="space"></div>
+</div>
+
+<script>
+    // header
+    
+    $('.top_menu, .search .icon, .gnb > li > a').css('color','#222')
+    // 메뉴
+    $('.main_menu .gnb > li').hover(function(){
+        $('.gnb > li > ul').eq($(this).index()).toggle()
+    }, function(){
+        $('.gnb > li > ul').eq($(this).index()).toggle()
+    })
+
+    $('.top_menu, .main_menu, .search_popup').hover(function(){
+        $('.line_space').show()
+        $('.dim .space').stop().fadeIn()
+    }, function(){
+        $('.line_space').hide()
+        $('.dim .space').stop().fadeOut()
+    })
+
+    $('.search_popup').hover(function(){
+    },function(){
+        $('.search_popup').hide()
+    })
+
+    // search
+    $('.search .icon').click(function(){
+        $('.search_popup').toggle()
+    })
+</script>
