@@ -427,9 +427,49 @@
 
 .item .text_group{
     position: absolute;
-    top: 0; left: 0;
+    top: 135px; left: 80px;
+    display: block;
+    color: #fff;
+    display: none;
 }
 
+.item .text_group h4 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.item .text_group h5 {
+    font-size: 18px;
+    margin-top: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.item .text_group .link_arrow {
+    width: 56px;
+    height: 56px;
+    position: relative;
+    background-color: #e1002a;
+    border-radius: 50%;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
+.item .text_group i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+}
+
+.item:first-child .text_group{
+    display: block;
+}
+
+.item:first-child p {
+    display: none;
+}
 
 /* etc */
 .etc {

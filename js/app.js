@@ -58,10 +58,12 @@ $(function () {
     // 주요사업 items
     $('.items .item').click(function(){
         $('.item p').show()
+        $('.item .text_group').hide()
         $('.items .item').css('width', '150px')
         $(this).animate({width : '65%'},500)
 
         $(this).children('p').hide()
+        $(this).children('.text_group').show()
     })
 
 
