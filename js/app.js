@@ -6,13 +6,15 @@ $(function () {
 
     // slide
     $('.slide').slick({
+        draggable: true,
         arrows: false,
         infinite: true,
         speed: 1000,
         fade: true,
         autoplay: true,
         autoplaySpeed: 4000,
-        cssEase: 'linear'
+        // cssEase: 'linear',
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
     });
 
     // line
@@ -25,6 +27,15 @@ $(function () {
             $('.line_top').css({'width' : '0'});
         })
     },5000)
+
+    // slide_menu
+    $('.slide_menu > li > a').click(function(){
+        $('.slide_menu > li > a, .slide_menu li ul').removeClass('active')
+        $(this).addClass('active')
+        $('.slide_menu li ul').eq($(this).parent().index()).addClass('active')
+
+        $('.slide').slick('slickGoTo', $(this).parent().index());
+    })
 
     // text
     ScrollReveal().reveal('.text', {
