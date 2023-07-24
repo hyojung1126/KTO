@@ -35,6 +35,8 @@ $(function () {
         $('.slide_menu li ul').eq($(this).parent().index()).addClass('active')
 
         $('.slide').slick('slickGoTo', $(this).parent().index());
+
+        $('.line_top').css({'width' : '0'});
     })
 
     // text
