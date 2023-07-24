@@ -68,17 +68,37 @@ $(function () {
         $('.page_2 .start').toggle()
     })
 
+    // 배너 페이지번호
+    const prev_page = document.querySelector(".prev_page")
+    const next_page = document.querySelector(".next_page")
+
+    prev_page.textContent = 1
+    next_page.textContent = 5
+
+    $('.banner').on('afterChange', function(event, slick, currentSlide, nextSlide){
+        prev_page.textContent = currentSlide + 1
+        next_page.textContent = slick.slideCount
+    });
+
     // 주요사업 items
+
     $('.items .item').click(function(){
         $('.item p').show()
         $('.item .text_group').hide()
-        $('.items .item').css('width', '150px')
-        $(this).animate({width : '65%'},500)
-
         $(this).children('p').hide()
         $(this).children('.text_group').show()
+
+        $('.items .item').animate({width : '150px'},500)
+        $(this).animate({width : '65%'},500)
     })
 
+    // $('.flow-text').slick({
+    //     // arrows: false,
+    //     // slidesToShow: 10,
+    //     // slidesToScroll: 2,
+    //     // autoplay: true,
+    //     // autoplaySpeed: 2000
+    //   });
 
 })
 

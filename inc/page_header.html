@@ -36,8 +36,8 @@
             <li>
                 <a href="../pages/about.html">공사소개</a>
                 <ul>
-                    <li><a href="#">설립목적및비전</a></li>
                     <li><a href="../pages/about.html">CI/BI소개</a></li>
+                    <li><a href="#">설립목적및비전</a></li>
                     <li><a href="#">조직도</a></li>
                     <li><a href="#">오시는길</a></li>
                 </ul>
@@ -63,7 +63,10 @@
             </li>
         </ul>
         <div class="search">
-            <div class="icon"><i class="xi-magnifier"></i></div>
+            <div class="icon">
+                <i class="xi-magnifier active"></i>
+                <i class="xi-close"></i>
+            </div>
         </div>
     </div>
     
@@ -73,7 +76,6 @@
 <div class="search_popup">
     <div class="input_text">
         <input type="text" size="50" placeholder="검색어를 입력하세요">
-        <i class="xi-magnifier"></i>
     </div>
 </div>
 
@@ -91,12 +93,13 @@
     $('.top_menu, .search .icon, .gnb > li > a').css('color','#222')
     // 메뉴
     $('.main_menu .gnb > li').hover(function(){
-        $('.gnb > li > ul').eq($(this).index()).toggle()
+        $('.gnb > li > ul').toggle()
+
     }, function(){
-        $('.gnb > li > ul').eq($(this).index()).toggle()
+        $('.gnb > li > ul').toggle()
     })
 
-    $('.top_menu, .main_menu, .search_popup').hover(function(){
+    $('.main_menu .gnb > li').hover(function(){
         $('.line_space').show()
         $('.dim .space').stop().fadeIn()
     }, function(){
@@ -104,13 +107,11 @@
         $('.dim .space').stop().fadeOut()
     })
 
-    $('.search_popup').hover(function(){
-    },function(){
-        $('.search_popup').hide()
-    })
-
     // search
+
     $('.search .icon').click(function(){
         $('.search_popup').toggle()
+        $('.search i').toggleClass('active')
     })
+
 </script>
