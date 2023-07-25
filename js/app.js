@@ -39,6 +39,19 @@ $(function () {
         $('.line_top').css({'width' : '0'});
     })
 
+
+
+    // 여기 부분 수정하기!!!
+    $('.slide_menu ul li').hover(function(){
+        $(this).children('div').stop().show()
+        $(this).children('div').children('img').stop().animate({'top' : '0'},300)
+    },function(){
+        $(this).children('div').children('img').stop().animate({'top' : '100px'},300)
+    })
+
+
+
+
     // text
     ScrollReveal().reveal('.text', {
         distance : '60px',
@@ -88,7 +101,10 @@ $(function () {
         $(this).children('p').hide()
         $(this).children('.text_group').show()
 
-        $('.items .item').animate({width : '150px'},500)
+        $('.items .item').addClass('active')
+        $(this).removeClass('active')
+
+        $('.items .item.active').animate({width : '150px'},500)
         $(this).animate({width : '65%'},500)
     })
 
