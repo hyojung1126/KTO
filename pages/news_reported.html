@@ -33,8 +33,11 @@
             <i class="xi-home-o"></i>
             <ul class="nav">
                 <li>
-                    <a href="#">알림마당</a>
-                    <i class="xi-angle-up"></i>
+                    <div>
+                        <a href="#">알림마당</a>
+                        <i class="xi-angle-down"></i>
+                    </div>
+                    
                     <ul>
                         <li><a href="./about.html">공사소개</a></li>
                         <li><a href="./Q&A.html">국민참여</a></li>
@@ -42,8 +45,10 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">보도자료</a>
-                    <i class="xi-angle-up"></i>
+                    <div>
+                        <a href="#">보도자료</a>
+                        <i class="xi-angle-down"></i>
+                    </div>
                     <ul>
                         <li><a href="./news_KTO.html">KTO 소식</a></li>
                         <li><a href="./news_announced.html">공고</a></li>
@@ -264,9 +269,9 @@
     
 <script>
     $('.nav > li i').click(function(){
-        $('.nav ul').eq($(this).parent().index()).toggle()
+        $('.nav ul').eq($(this).parent().parent().index()).toggle()
         $(this).toggleClass('active')
-        $('.nav > li').eq($(this).parent().index()).toggleClass('active')
+        $('.nav > li').eq($(this).parent().parent().index()).toggleClass('active')
     })
 
     $('.page_number .number').click(function(){

@@ -408,10 +408,10 @@
 
     // tab
     $('.tab_title p').click(function(){
+        $('.tab_contents > div').hide()
         $('.tab_title p').removeClass('active')
         $(this).addClass('active')
 
-        $('.CI_contents').hide()
         $('.tab_contents > div').eq($(this).index()).show()
 
     })

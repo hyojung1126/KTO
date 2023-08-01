@@ -30,6 +30,10 @@
     color: #fff;
 }
 
+.top_menu a {
+    white-space: nowrap;
+}
+
 .top_menu ul {
     display: flex;
     gap: 20px;
@@ -597,6 +601,7 @@
     font-size: 20px;
     font-weight: normal;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .etc_main .link:hover, .main_box_1:hover, .main_box_2:hover, .sub_box .item:hover {
@@ -663,6 +668,7 @@
     padding: 20px 40px;
     font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .sub_box .item i {
