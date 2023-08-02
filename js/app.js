@@ -39,17 +39,12 @@ $(function () {
         $('.line_top').css({'width' : '0'});
     })
 
-
-
-    // 여기 부분 수정하기!!!
     $('.slide_menu ul li').hover(function(){
         $(this).children('div').stop().show()
         $(this).children('div').children('img').stop().animate({'top' : '0'},300)
     },function(){
         $(this).children('div').children('img').stop().animate({'top' : '100px'},300)
     })
-
-
 
 
     // text
@@ -108,13 +103,31 @@ $(function () {
         $(this).animate({width : '65%'},500)
     })
 
-    // $('.flow-text').slick({
-    //     // arrows: false,
-    //     // slidesToShow: 10,
-    //     // slidesToScroll: 2,
-    //     // autoplay: true,
-    //     // autoplaySpeed: 2000
-    //   });
+    // 관련사이트
+    $('#link_slider').slick({
+		dots: false,
+		infinite: true,
+		speed: 500,
+		slide: 'li',
+		slidesToShow: 5,
+		centerMode: false,
+		prevArrow: $('.xi-arrow-left'),
+		nextArrow: $('.xi-arrow-right'),
+		variableWidth: true,
+        autoplay : true,
+        autoplaySpeed : 2500,
+        pauseOnHover : true
+	});
+
+    $('.xi-play-circle-o').click(function(){
+        $('#link_slider').slick('slickPlay');
+        $('.xi-pause-circle-o, .xi-play-circle-o').toggleClass('active')
+    });
+
+    $('.xi-pause-circle-o').click(function(){
+        $('#link_slider').slick('slickPause');
+        $('.xi-pause-circle-o, .xi-play-circle-o').toggleClass('active')
+    });
 
 })
 

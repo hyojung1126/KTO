@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slick</title>
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <style>
+#link_slider{
+    height: 40px;
+    /* overflow: hidden;  */
+    /* width:600px */
+}
+ #link_slider li{
+    position: relative;
+    padding: 0px;
+    width: auto !important;
+    margin: 0;
+    height:40px;
+    display: inline-block !important;
+    color: #fff;
+}
+
+#link_slider li a{
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    padding: 0 10px ;
+    position: relative;
+    font-size: 20px;
+}
+
+#link_slider li i {
+    font-size: 8px;
+    font-weight: bold;
+}
+
+/* 
+ #link_slider li {
+     opacity: 1;
+     -webkit-transition: 300ms;
+     -moz-transition: 300ms;
+     -ms-transition: 300ms;
+     -o-transition: 300ms;
+     transition: 300ms;
+     z-index:1;
+     background:none
+} */
+
+
+</style>
+
+<script src="./script/jquery-1.12.4.js"></script>
+<script src="./js/app.js"></script>
+
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+</head>
+<body>
+    <ul id="link_slider">
+        <li><a href="">청렴포털</a></li>
+        <li><a href=""><i class="xi-radiobox-blank"></i></a></li>
+        <li><a href="">안전신문고</a></li>
+        <li><a href=""><i class="xi-radiobox-blank"></i></a></li>
+        <li><a href="">청탁금지법 통합검색</a></li>
+        <li><a href=""><i class="xi-radiobox-blank"></i></a></li>
+        <li><a href="">정부24</a></li>
+        <li><a href=""><i class="xi-radiobox-blank"></i></a></li>
+        <li><a href="">문화포털</a></li>
+        <li><a href=""><i class="xi-radiobox-blank"></i></a></li>
+        <li><a href="">문화가 있는 날</a></li>
+        <li><a href=""><i class="xi-radiobox-blank"></i></a></li>
+        <li><a href="">청년희망포털</a></li>
+        <li><a href=""><i class="xi-radiobox-blank"></i></a></li>
+    </ul>
+    <div class="btn_ctrl_sld">
+        <a href="javascript:;" class="ar_prev" id="link_aro_1">이전</a>
+        <a href="javascript:;" class="ar_next" id="link_aro_2">다음</a>
+    </div>
+
+    <script>
+    $('#link_slider').slick({
+		dots: false,
+		infinite: true,
+		speed: 500,
+		slide: 'li',
+		slidesToShow: 5,
+		centerMode: false,
+		prevArrow: $('#link_aro_1'),
+		nextArrow: $('#link_aro_2'),
+		variableWidth: true,
+        autoplay : true,
+        autoplaySpeed : 2500,
+        pauseOnHover : true
+	});
+    </script>
+</body>
+</html>
