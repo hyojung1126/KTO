@@ -53,6 +53,13 @@ $(function () {
         origin : 'top',
         duration : 2000,
     });
+
+    // news
+    $('.pages .contents').hover(function(){
+        $(this).addClass('active')
+    }, function(){
+        $(this).removeClass('active')
+    })
         
     // banner
     $('.banner').slick({
