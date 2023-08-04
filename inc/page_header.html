@@ -87,6 +87,8 @@
     <div class="space"></div>
 </div>
 
+<a href="#" class="go_top"><i class="xi-arrow-up"></i></a>
+
 <script>
     // header
     
@@ -108,10 +110,20 @@
     })
 
     // search
-
     $('.search .icon').click(function(){
         $('.search_popup').toggle()
         $('.search i').toggleClass('active')
     })
+
+    // go_top
+    $(window).scroll(function () {
+      var scrollTopValue = $(document).scrollTop();
+
+      if (scrollTopValue > 50) {
+        $(".go_top").stop().fadeIn('fast');
+      } else {
+        $(".go_top").stop().fadeOut('fast');
+      }
+    });
 
 </script>

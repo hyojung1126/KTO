@@ -56,6 +56,22 @@
     font-size: 5px;
 }
 
+/* go_top */
+.go_top {
+    background-color: #aaa;
+    width: 56px; height: 56px;
+    position: fixed;
+    right: 2rem;
+    bottom: 3.6rem;
+    font-size: 22px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 56px;
+    z-index: 1;
+    color: #fff;
+    display: none;
+}
+
     /* main_menu */
 .main_menu {
     display: flex;

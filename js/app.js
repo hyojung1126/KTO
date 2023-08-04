@@ -6,6 +6,7 @@ $(function () {
 
     // slide
     $('.slide').slick({
+        dots: true,
         draggable: true,
         arrows: false,
         infinite: true,
@@ -14,8 +15,17 @@ $(function () {
         autoplay: true,
         autoplaySpeed: 4000,
         // cssEase: 'linear',
-        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
     });
+
+    $('.slide').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        var index = (currentSlide+1) % 3
+        // console.log(index)
+        $('.slide_menu > li > a, .slide_menu li ul').removeClass('active')
+        $('.slide_menu > li > a').eq(index).addClass('active')
+        $('.slide_menu li ul').eq(index).addClass('active')
+    });
+
 
     // line
     $('.line_top').animate({width:"100%"},4000,function(){
@@ -34,9 +44,9 @@ $(function () {
         $(this).addClass('active')
         $('.slide_menu li ul').eq($(this).parent().index()).addClass('active')
 
-        $('.slide').slick('slickGoTo', $(this).parent().index());
+        $('.slide').slick('slickGoTo', $(this).parent().index())
 
-        $('.line_top').css({'width' : '0'});
+        // $('.line_top').css({'width' : '0'});
     })
 
     $('.slide_menu ul li').hover(function(){
@@ -46,6 +56,16 @@ $(function () {
         $(this).children('div').children('img').stop().animate({'top' : '100px'},300)
     })
 
+    // go_top
+    $(window).scroll(function () {
+        var scrollTopValue = $(document).scrollTop();
+  
+        if (scrollTopValue > 50) {
+          $(".go_top").stop().fadeIn('fast');
+        } else {
+          $(".go_top").stop().fadeOut('fast');
+        }
+      });
 
     // text
     ScrollReveal().reveal('.text', {
@@ -90,8 +110,8 @@ $(function () {
     prev_page.textContent = 1
     next_page.textContent = 5
 
-    $('.banner').on('afterChange', function(event, slick, currentSlide, nextSlide){
-        prev_page.textContent = currentSlide + 1
+    $('.banner').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        prev_page.textContent = (currentSlide + 1) % 5 + 1
         next_page.textContent = slick.slideCount
     });
 
@@ -137,6 +157,3 @@ $(function () {
     });
 
 })
-
-
-
