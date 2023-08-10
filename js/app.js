@@ -51,9 +51,9 @@ $(function () {
 
     $('.slide_menu ul li').hover(function(){
         $(this).children('div').stop().show()
-        $(this).children('div').children('img').stop().animate({'top' : '0'},300)
+        $(this).children('div').children('img').stop().animate({'top' : '0'},200,'easeInQuad')
     },function(){
-        $(this).children('div').children('img').stop().animate({'top' : '100px'},300)
+        $(this).children('div').children('img').stop().animate({'top' : '100px'},200)
     })
 
     // go_top
